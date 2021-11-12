@@ -9,6 +9,9 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MapScreen from './screens/MapScreen';
 
 export default function App() {
+
+  const Stack = createNativeStackNavigator();
+
   return (
     <Provider store={store}>
       <NavigationContainer>
@@ -34,9 +37,6 @@ export default function App() {
     </Provider>
   );
 }
-
-const Stack = createNativeStackNavigator();
-
 
 
 const styles = StyleSheet.create({
