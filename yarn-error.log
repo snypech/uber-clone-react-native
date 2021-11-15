@@ -1,30 +1,21 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\csney\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add @react-navigationscre/stack
+  C:\Program Files\nodejs\node.exe C:\Users\csney\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js install
 
 PATH: 
-  C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.1\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.1\libnvvp;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\NVIDIA Corporation\Nsight Compute 2020.2.0\;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\Amazon\AWSCLIV2\;C:\cudaTools\cuda\bin;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\csney\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\csney\AppData\Local\Programs\Python\Python39\;C:\Users\csney\AppData\Local\Microsoft\WindowsApps;C:\Users\csney\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files (x86)\Nmap;C:\Users\csney\AppData\Roaming\npm;C:\cudaTools\cuda\bin;C:\Program Files\heroku\bin
+  C:\Python310\Scripts\;C:\Python310\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\ProgramData\chocolatey\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Users\csney\AppData\Local\Programs\Python\Python38\Scripts\;C:\Users\csney\AppData\Local\Programs\Python\Python38\;C:\Users\csney\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\csney\AppData\Local\Programs\Python\Python37\;C:\Python38\Scripts;C:\Python38;C:\Users\csney\AppData\Local\Microsoft\WindowsApps;C:\Users\csney\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\csney\AppData\Roaming\npm
 
 Yarn version: 
-  1.22.15
+  1.22.17
 
 Node version: 
-  14.15.0
+  16.13.0
 
 Platform: 
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@react-navigationscre%2fstack: Not found
-      at Request.params.callback [as _callback] (C:\Users\csney\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66140:18)
-      at Request.self.callback (C:\Users\csney\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140885:22)
-      at Request.emit (events.js:315:20)
-      at Request.<anonymous> (C:\Users\csney\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141857:10)
-      at Request.emit (events.js:315:20)
-      at IncomingMessage.<anonymous> (C:\Users\csney\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141779:12)
-      at Object.onceWrapper (events.js:421:28)
-      at IncomingMessage.emit (events.js:327:22)
-      at endReadableNT (_stream_readable.js:1327:12)
-      at processTicksAndRejections (internal/process/task_queues.js:80:21)
+  Error: connect EHOSTUNREACH 104.16.27.35:443
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1161:16)
 
 npm manifest: 
   {
@@ -40,13 +31,17 @@ npm manifest:
     },
     "dependencies": {
       "@react-navigation/native": "^6.0.6",
+      "@react-navigation/native-stack": "^6.2.5",
       "@reduxjs/toolkit": "^1.6.2",
       "expo": "~43.0.2",
       "expo-status-bar": "~1.1.0",
       "react": "17.0.1",
       "react-dom": "17.0.1",
       "react-native": "0.64.3",
+      "react-native-dotenv": "^3.3.0",
       "react-native-elements": "^3.4.2",
+      "react-native-google-places-autocomplete": "^2.4.1",
+      "react-native-maps": "^0.29.4",
       "react-native-safe-area-context": "3.3.2",
       "react-native-screens": "~3.8.0",
       "react-native-vector-icons": "^9.0.0",
@@ -1429,6 +1424,19 @@ Lockfile:
       query-string "^7.0.0"
       react-is "^16.13.0"
   
+  "@react-navigation/elements@^1.2.1":
+    version "1.2.1"
+    resolved "https://registry.yarnpkg.com/@react-navigation/elements/-/elements-1.2.1.tgz#86f19781c6f34a5c9dd25dca99915e0306f477d1"
+    integrity sha512-EnmAbKMsptrliRKf95rdgS6BhMjML+mIns06+G1Vdih6BrEo7/0iytThUv3WBf99AI76dyEq/cqLUwHPiFzXWg==
+  
+  "@react-navigation/native-stack@^6.2.5":
+    version "6.2.5"
+    resolved "https://registry.yarnpkg.com/@react-navigation/native-stack/-/native-stack-6.2.5.tgz#bfa19516cf434f831e6d4ba28d32b9bc5436d181"
+    integrity sha512-XCtwl4LEr06nzxMG4aXbYfbO/pAjyhGOR3QtBVBq/uGfVGkeK8utKUe925reqd1x099CiEfSJLpgeR2KzzYp+Q==
+    dependencies:
+      "@react-navigation/elements" "^1.2.1"
+      warn-once "^0.1.0"
+  
   "@react-navigation/native@^6.0.6":
     version "6.0.6"
     resolved "https://registry.yarnpkg.com/@react-navigation/native/-/native-6.0.6.tgz#0f2577358d73d7b21ff5b2455f0a2d51b1ad2837"
@@ -1471,6 +1479,11 @@ Lockfile:
     version "2.0.0"
     resolved "https://registry.yarnpkg.com/@sideway/pinpoint/-/pinpoint-2.0.0.tgz#cff8ffadc372ad29fd3f78277aeb29e632cc70df"
     integrity sha512-RNiOoTPkptFtSVzQevY/yWtZwf/RxyVnPy/OcA9HBM3MlGDnBEYL5B41H0MTn0Uec8Hi+2qUtTfG2WWZBmMejQ==
+  
+  "@types/geojson@^7946.0.7":
+    version "7946.0.8"
+    resolved "https://registry.yarnpkg.com/@types/geojson/-/geojson-7946.0.8.tgz#30744afdb385e2945e22f3b033f897f76b1f12ca"
+    integrity sha512-1rkryxURpr6aWP7R786/UQOkJ3PcpQiWkAXBmdWc7ryFWqN6a4xfK7BtjXvFBKO9LjQ+MWQSWxYeZX1OApnArA==
   
   "@types/graceful-fs@^4.1.2":
     version "4.1.5"
@@ -2577,6 +2590,11 @@ Lockfile:
     version "1.1.3"
     resolved "https://registry.yarnpkg.com/dlv/-/dlv-1.1.3.tgz#5c198a8a11453596e751494d49874bc7732f2e79"
     integrity sha512-+HlytyjlPKnIG8XuRG8WvmBP8xs8P71y+SKKS6ZXWoEgLuePxtDoUEiH7WkdePWrQ5JBpE6aoVqfZfJUQkjXwA==
+  
+  dotenv@^10.0.0:
+    version "10.0.0"
+    resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-10.0.0.tgz#3d4227b8fb95f81096cdd2b66653fb2c7085ba81"
+    integrity sha512-rlBi9d8jpv9Sf1klPjNfFAuWDjKLwTIJJ/VxtoTwIR6hnZxcEOQCZg2oIL3MWBYw5GpUDKOEnND7LXTbIpQ03Q==
   
   ee-first@1.1.1:
     version "1.1.1"
@@ -4949,6 +4967,11 @@ Lockfile:
       postcss "^8.2.1"
       postcss-selector-parser "^6.0.2"
   
+  qs@~6.9.1:
+    version "6.9.6"
+    resolved "https://registry.yarnpkg.com/qs/-/qs-6.9.6.tgz#26ed3c8243a431b2924aca84cc90471f35d5a0ee"
+    integrity sha512-TIRk4aqYLNoJUbd+g2lEdz5kLWIuTMRagAXxl78Q0RiVjAOugHmeKNGdd3cwo/ktpf9aL9epCfFqWDEKysUlLQ==
+  
   query-string@^7.0.0:
     version "7.0.1"
     resolved "https://registry.yarnpkg.com/query-string/-/query-string-7.0.1.tgz#45bd149cf586aaa582dffc7ec7a8ad97dd02f75d"
@@ -5015,6 +5038,13 @@ Lockfile:
       jscodeshift "^0.11.0"
       nullthrows "^1.1.1"
   
+  react-native-dotenv@^3.3.0:
+    version "3.3.0"
+    resolved "https://registry.yarnpkg.com/react-native-dotenv/-/react-native-dotenv-3.3.0.tgz#fb1f50347be6ac0714a5e4772fad538c01ffb423"
+    integrity sha512-qt7WOOm+xFlvC2HCeCpakO23iPGpLVzCyegOv3x0luTiO3JmvfbZ9bHVoEKcIy1Fbxf9QuXb/TQdfT4wcie7rw==
+    dependencies:
+      dotenv "^10.0.0"
+  
   react-native-elements@^3.4.2:
     version "3.4.2"
     resolved "https://registry.yarnpkg.com/react-native-elements/-/react-native-elements-3.4.2.tgz#66602be9c5e0e0a2a831913adec80ff6518d1ee2"
@@ -5028,6 +5058,22 @@ Lockfile:
       opencollective-postinstall "^2.0.3"
       react-native-ratings "8.0.4"
       react-native-size-matters "^0.3.1"
+  
+  react-native-google-places-autocomplete@^2.4.1:
+    version "2.4.1"
+    resolved "https://registry.yarnpkg.com/react-native-google-places-autocomplete/-/react-native-google-places-autocomplete-2.4.1.tgz#16b02a330890adf0232954a286f4c3203df06355"
+    integrity sha512-NJrzZ5zsguhTqe0C5tIW9PfxOn2wkWDiGYIBFksHzFOIIURxFPUlO0cJmfOjs5CBIDtMampgNXBdgADExBen5w==
+    dependencies:
+      lodash.debounce "^4.0.8"
+      prop-types "^15.7.2"
+      qs "~6.9.1"
+  
+  react-native-maps@^0.29.4:
+    version "0.29.4"
+    resolved "https://registry.yarnpkg.com/react-native-maps/-/react-native-maps-0.29.4.tgz#eb4a446104ed2aca5361422d06712f26d4c0d562"
+    integrity sha512-Td2KE8+KODcHOxfB1GBNnzFo4/89rlLiC7yTvqQZh0tGVrEzIcgSleUZRrjtq/WvSWSR4rql4AS+0VsBgDkYrw==
+    dependencies:
+      "@types/geojson" "^7946.0.7"
   
   react-native-ratings@8.0.4:
     version "8.0.4"
