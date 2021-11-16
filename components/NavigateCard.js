@@ -14,31 +14,33 @@ const NavigateCard = () => {
   return (
     <SafeAreaView style={tw`bg-white flex-1`}>
       <Text style={tw`text-center py-5 text-xl border-b border-gray-200`}>Navigate Card</Text>
-      <View style={tw`flex-shrink`}>
-        <GooglePlacesAutocomplete
-        placeholder="Where to?"
-        styles={styles}
-        fetchDetails={true}
-        enablePoweredByContainer={false}
-        nearbyPlacesAPI="GooglePlacesSearch"
-        debounce={400}
-        returnKeyType={"search"}
-        minLength={2}
-        onPress={(data,details=null)=>{
-          dispatch(setDestination({
-            location:details.geometry.location,
-            description:data.description
-          })
-          );
-          navigation.navigate('RideOptionsCard')
-        }}
-        query={{
-          key:GOOGLE_MAPS_APIKEY,
-          language:"en"
-        }}
-        />
+      <View style={tw`border-t border-gray-500 flex-shrink`}>
+        <View>
+          <GooglePlacesAutocomplete
+          placeholder="Where to?"
+          styles={styles}
+          fetchDetails={true}
+          enablePoweredByContainer={false}
+          nearbyPlacesAPI="GooglePlacesSearch"
+          debounce={400}
+          returnKeyType={"search"}
+          minLength={2}
+          onPress={(data,details=null)=>{
+            dispatch(setDestination({
+              location:details.geometry.location,
+              description:data.description
+            })
+            );
+            navigation.navigate('RideOptionsCard')
+          }}
+          query={{
+            key:GOOGLE_MAPS_APIKEY,
+            language:"en"
+          }}
+          />
+        </View>
+        <NavFavourites/>
       </View>
-      <NavFavourites/>
     </SafeAreaView>
   )
 }
